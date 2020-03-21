@@ -3,7 +3,7 @@ class Shift:
     Shift stuff
     """
     def __init__(self, day, time, needed, prefer=None, noway=None, available=None, assigned=None):
-        self._day= day,
+        self._day= day
         self._time= time
         self._needed = needed
         self._prefer= prefer
@@ -41,11 +41,8 @@ class Shift:
     def getDay():
         return self._day
 
-    def getStart():
-        return self._start
-
-    def getEnd():
-        return self._end
+    def getTime():
+        return self._time
 
     def getAssigned():
         return self._assigned
@@ -58,6 +55,9 @@ class Shift:
 
     def getNoWay():
         return self._noway
+
+    def getNeeded():
+        return self._needed
 
 
 def readShftTxt(filename):

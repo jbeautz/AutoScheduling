@@ -10,8 +10,8 @@ class Employee:
         self._name= attributes[3]
         self._weekhours= attributes[4]
         self._dayhours= attributes[5]
-        self._prefer= attributes[6]
-        self._noway = attributes[7]
+        self._prefer= attributes[6].split()
+        self._noway = attributes[7].split()
 
         self._shifts= None
         #self._available= attributes[7]
