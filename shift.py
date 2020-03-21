@@ -2,10 +2,9 @@ class Shift:
     """
     Shift stuff
     """
-    def __init__(self, day, start, needed, prefer=None, noway=None, available=None, assigned=None):
+    def __init__(self, day, time, needed, prefer=None, noway=None, available=None, assigned=None):
         self._day= day,
-        self._start= start
-        self._end= start+2
+        self._time= time
         self._needed = needed
         self._prefer= prefer
         self._noway= noway
@@ -66,6 +65,6 @@ def readShftTxt(filename):
     file = open(filename, "r")
     for aline in file:
         values = aline.split()
-        ShiftList.append(Shift(values))
+        ShiftList.append(Shift(values[0],values[1],values[2]))
     file.close()
     return ShiftList

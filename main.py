@@ -18,7 +18,7 @@ ampl = AMPL(Environment('//home//jack//ampl//'))
 #EMPdf = pd.DataFrame.from_records(employees)
 #print(EMPdf)
 
-df = mkdat(employees, readShftTxt('\\jack\\home\\programs\\scheduling\\shiftlist.txt'))
+df = mkdat(employees, readShftTxt('//home//jack//Programs//AutoScheduling//shiftlist.txt'))
 ampl.setData(df)
 
 ampl.eval('model opt_algo.mod')

@@ -5,7 +5,7 @@ import pandas as pd
 import simplejson as json
 
 SCOPE = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-SECRETS_FILE = '/home/jack/programs/scheduling/credentials.json'
+SECRETS_FILE = '/home/jack/Programs/AutoScheduling/credentials.json'
 SPREADSHEET = "Schedule for Fall 1999"
 
 def readForm():
