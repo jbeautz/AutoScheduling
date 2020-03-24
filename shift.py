@@ -82,6 +82,6 @@ def txt2ShiftList(txt):
     """
     txtlist= txt.split()
     ShiftList= []
-    for i in range(len(floor(txtlist)/2):
+    for i in range(int(len(txtlist)/2)):
         ShiftList.append(Shift(txtlist[i],txtlist[i+1]))
     return ShiftList

@@ -18,10 +18,15 @@ ampl = AMPL(Environment('//home//jack//ampl//'))
 #EMPdf = pd.DataFrame.from_records(employees)
 #print(EMPdf)
 
-df = mkdat(employeeList, readShftTxt('//home//jack//Programs//AutoScheduling//shiftlist.txt'))
+shiftList = readShftTxt('//home//jack//Programs//AutoScheduling//shiftlist.txt')
+df = mkdat(employeeList, shiftList)
 ampl.setData(df)
 
 ampl.eval('model opt_algo.mod')
+
+
+
+
 
 """
 def cleanName(name):

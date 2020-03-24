@@ -6,7 +6,7 @@ def mkdat(emps, shfts):
     Formats data so that simplex algo can run
     """
     df = pd.DataFrame(('EMP', 'SHIFT'), ('yes','no'))
-
+    print(df)
     yes = np.zeros((len(emps), len(shfts)))
     no = yes
 
@@ -20,7 +20,7 @@ def mkdat(emps, shfts):
     df.set_value({
         (emps, shfts): (yes[i][j], no[i][j])
         for i, emp in enumerate(emps)
-        for j, shft in enumerate(shfts)
+        #for j, shft in enumerate(shfts)
     })
 
     return df

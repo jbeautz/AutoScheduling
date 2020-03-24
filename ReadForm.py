@@ -9,6 +9,10 @@ SECRETS_FILE = '/home/jack/Programs/AutoScheduling/credentials.json'
 SPREADSHEET = "Schedule for Fall 1999"
 
 def readForm():
+    """
+    Reads google sheet linked to employee responses.
+    Brings raw employee data into algo environment
+    """
     json_key = json.load(open(SECRETS_FILE))
     credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRETS_FILE, SCOPE)
 
