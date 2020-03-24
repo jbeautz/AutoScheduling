@@ -65,6 +65,9 @@ class Shift:
 
 
 def readShftTxt(filename):
+    """
+    Reads preformatted list of all shifts needed
+    """
     ShiftList = []
     file = open(filename, "r")
     for aline in file:
@@ -74,8 +77,11 @@ def readShftTxt(filename):
     return ShiftList
 
 def txt2ShiftList(txt):
+    """
+    Reads shifts from employee entry
+    """
     txtlist= txt.split()
-    shftlst= []
-    for i in range(int(len(txtlist)/2)):
-        shftlst.append(Shift(txtlist[i],txtlist[i+1]))
-    return shftlst
+    ShiftList= []
+    for i in range(len(floor(txtlist)/2):
+        ShiftList.append(Shift(txtlist[i],txtlist[i+1]))
+    return ShiftList

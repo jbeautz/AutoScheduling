@@ -5,6 +5,7 @@ param Prefered{EMP, SHIFT};
 param Cannot{EMP, SHIFT};
 param dayhours{EMP};
 param weekhour{EMP};
+param needed{SHIFT};
 
 Var W{EMP, SHIFT} binary;
 
@@ -12,7 +13,7 @@ maximize Preference:
   sum{e in EMP, s in SHIFT} W[e,s]*Prefered[e,s];
 
 subject to Shifts_Filled{s in SHIFT}:
-  sum{e in EMP} W[e,s] = 1;
+  sum{e in EMP} W[e,s] = needed[s];
 
 subject to weekhours{e in EMP}:
   sum{s in SHIFT} (2 * W[e,s]) = weekhour[e];

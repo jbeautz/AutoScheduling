@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 
 def mkdat(emps, shfts):
+    """
+    Formats data so that simplex algo can run
+    """
     df = pd.DataFrame(('EMP', 'SHIFT'), ('yes','no'))
 
     yes = np.zeros((len(emps), len(shfts)))
