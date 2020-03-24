@@ -76,6 +76,6 @@ def readShftTxt(filename):
 def txt2ShiftList(txt):
     txtlist= txt.split()
     shftlst= []
-    for i in range(len(txtlist)/2):
+    for i in range(int(len(txtlist)/2)):
         shftlst.append(Shift(txtlist[i],txtlist[i+1]))
     return shftlst

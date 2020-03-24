@@ -7,8 +7,6 @@ def mkdat(emps, shfts):
     yes = np.zeros((len(emps), len(shfts)))
     no = yes
 
-    print(emps[0].getPrefer())
-
     for i in range(len(emps)):
         for j in range(len(shfts)):
             if shfts[j] in emps[i].getPrefer():
