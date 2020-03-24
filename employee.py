@@ -1,8 +1,17 @@
-
+from shift import txt2ShiftList
 
 class Employee:
     """
-    Employee Stuff
+    Defines an employee object.
+
+    timestamp: when employee filled out preference form
+    netid: cornell netid of employee
+    name: name of employee
+    weekhours: requested number of hours per week
+    dayhours: requested max number of hours per day
+    prefer: requested shifts
+    noway: shifts employee cannot work
+    shifts: assigned shifts
     """
     def __init__(self, attributes):
         self._timestamp= attributes[1]
@@ -10,8 +19,8 @@ class Employee:
         self._name= attributes[3]
         self._weekhours= attributes[4]
         self._dayhours= attributes[5]
-        self._prefer= attributes[6].split()
-        self._noway = attributes[7].split()
+        self._prefer= txt2ShiftList(attributes[6])
+        self._noway = txt2ShiftList(attributes[7])
 
         self._shifts= None
         #self._available= attributes[7]

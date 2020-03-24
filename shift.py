@@ -1,13 +1,17 @@
 class Shift:
     """
-    Shift stuff
+    Defines shift object to be worked.
+
+    day: day of the week the shift falls on
+    time: beginning and end time of the shift
+    needed: number employees needed on shift
+    available: list of employees free to work during shift
+    assigned: list of employees assigned to shift
     """
-    def __init__(self, day, time, needed, prefer=None, noway=None, available=None, assigned=None):
+    def __init__(self, day, time, needed=0, available=None, assigned=None):
         self._day= day
         self._time= time
         self._needed = needed
-        self._prefer= prefer
-        self._noway= noway
         self._available = available
         self._assigned= assigned
 
@@ -68,3 +72,10 @@ def readShftTxt(filename):
         ShiftList.append(Shift(values[0],values[1],values[2]))
     file.close()
     return ShiftList
+
+def txt2ShiftList(txt):
+    txtlist= txt.split()
+    shftlst= []
+    for i in range(len(txtlist)/2):
+        shftlst.append(Shift(txtlist[i],txtlist[i+1]))
+    return shftlst
